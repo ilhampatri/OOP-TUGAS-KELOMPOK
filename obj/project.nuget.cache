@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "vWSj10hbzDscU7lI+NRuA/ZU52KDeprkELrOD5Fjm6jy25nFrCDiJ+ykZRvyqt8lu/MQ0YIc9JoJthPWbMsX9Q==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Visensius Dony\\Documents\\GitHub\\OOP-TUGAS-KELOMPOK\\UserOop.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Visensius Dony\\.nuget\\packages\\bcrypt.net-core\\1.6.0\\bcrypt.net-core.1.6.0.nupkg.sha512"
+  ],
+  "logs": []
+}
