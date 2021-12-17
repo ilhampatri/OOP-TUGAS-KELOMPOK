@@ -30,9 +30,9 @@ namespace UserOop
             var userL = a.nameLast.Exists(x => x == LastName);
             a.name.Add(FirstName);
             a.nameLast.Add(LastName);*/
-            while (loop == true)
+            while (loop)
             {
-                if (userA == true||userB == true)
+                if (userA||userB)
                 {
                     Random random = new Random();
                     double flt = random.NextDouble();
@@ -46,7 +46,7 @@ namespace UserOop
                     UserName = $"{FirstName.Substring(0, 2)}{LastName.Substring(0, 2)}";
                     loop = false;
                 }
-                while(loopInner == true)
+                while(loopInner)
                 {
                     var userName= a.user.Exists(y => y.UserName == UserName);
                     if (userName == true)
