@@ -21,10 +21,10 @@ namespace UserOop
                     Console.WriteLine("2.Show User");
                     Console.WriteLine("3.Search User");
                     Console.WriteLine("4.Login User");
-                    Console.WriteLine("5.Hapus Data User");
-                    Console.WriteLine("6.Edit Data User");
+                    Console.WriteLine("5.Delete User Data");
+                    Console.WriteLine("6.Edit User Data");
                     Console.WriteLine("7.Exit");
-                    Console.Write("Masukkan Menu pilihan: ");
+                    Console.Write("Enter the selection menu: ");
                     menu = int.Parse(Console.ReadLine());
                     switch (menu)
                     {
@@ -63,14 +63,14 @@ namespace UserOop
                                     if (a.user.Count > 0)
                                     {
                                         Console.WriteLine("=====Search User========");
-                                        Console.Write("Masukkan pencarian ");
+                                        Console.Write("Enter search ");
                                         string nama = Console.ReadLine();
                                         a.SearchUser(nama);
                                         loop = false;
                                     }
                                     else
                                     {
-                                        Console.WriteLine("data kosong");
+                                        Console.WriteLine("Empty");
                                         loop = false;
                                     }
                                 
@@ -94,7 +94,7 @@ namespace UserOop
                             }
                             else
                             {
-                                Console.WriteLine("data kosong");
+                                Console.WriteLine("Empty");
                                 loop = false;
                             }
                             repeat = true;
@@ -106,13 +106,13 @@ namespace UserOop
                             if (a.user.Count > 0)
                             {
                                 Console.WriteLine("=====Edit User========");
-                            Console.Write("Masukkan username yang ingin diedit ");
+                            Console.Write("Enter the username you want to change ");
                             userEdit = Console.ReadLine();
                             a.EditUser(userEdit);
                             }
                             else
                             {
-                                Console.WriteLine("data kosong");
+                                Console.WriteLine("Empty");
                                 loop = false;
                             }
                             repeat = true;
@@ -122,7 +122,7 @@ namespace UserOop
                             repeat = false;
                             break;
                         default:
-                            Console.WriteLine("Menu tidak ditemukan!");
+                            Console.WriteLine("=Menu not found!");
                             repeat = true;
                             AnyKey();
                             break;
@@ -130,7 +130,7 @@ namespace UserOop
                 }
                 catch (Exception)
                 {
-                    Console.WriteLine("Menu harus angka!");
+                    Console.WriteLine("Menu must be numbers");
                     AnyKey();
                     repeat = true;
                 }

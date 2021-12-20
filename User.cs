@@ -17,11 +17,11 @@ namespace UserOop
             
             bool loop = true;
             bool loopInner = true;
-            Console.Write("Masukkan FirstName: ");
+            Console.Write("Enter FirstName: ");
             this.FirstName = Console.ReadLine();
-            Console.Write("Masukkan LastName: ");
+            Console.Write("Enter LastName: ");
             this.LastName = Console.ReadLine();
-            Console.Write("Masukkan Password: ");
+            Console.Write("Enter Password: ");
             this.Password = Console.ReadLine();
             this.HashedPassword = BCrypt.Net.BCrypt.HashPassword(Password);
             var check = a.user.Exists(x => x.UserName == UserName)

@@ -26,9 +26,9 @@ namespace UserOop
         public void Login()
         {
             Activity a = new Activity();
-            Console.Write("Masukkan Username: ");
+            Console.Write("Enter Username: ");
             var username = Console.ReadLine();
-            Console.Write("Masukkan Password: ");
+            Console.Write("Enter Password: ");
             var password = Console.ReadLine();
             var userN = user.Exists(x => x.UserName == username);
             var pass = user.Exists(x => BCrypt.Net.BCrypt.Verify(password, x.HashedPassword));
@@ -36,12 +36,12 @@ namespace UserOop
                 if ( userN==true && pass==true)
                 {
                 
-                Console.WriteLine("Login Berhasil");
+                Console.WriteLine("Login Successfully");
                 }
                 else
                 {
                 
-                Console.WriteLine("Login Gagal");
+                Console.WriteLine("Login failed");
                 }
         }
         public void SearchUser(string nama)
@@ -52,7 +52,7 @@ namespace UserOop
                 var validate= user.Exists(user => user.FirstName.Contains(nama)|| user.LastName.Contains(nama));
                 if (validate == true && user.Count>0)
                 {
-                    Console.WriteLine("data ditemukan");
+                    Console.WriteLine("data found");
                     var foundUser = user.FindAll(x => x.FirstName.Contains(nama)|| x.LastName.Contains(nama));
                     foreach (User u in foundUser)
                     {
@@ -66,7 +66,7 @@ namespace UserOop
                 }
                 else
                 {
-                    Console.WriteLine("data tidak ditemukan");
+                    Console.WriteLine("data not found");
                     Console.ReadKey();
                 }
         }
@@ -74,7 +74,7 @@ namespace UserOop
         {
                 this.user.Add(user);
                 Console.WriteLine("==============================");
-                Console.WriteLine("Sukses Menambahkan");
+                Console.WriteLine("Successfully adding");
                 Console.WriteLine("==============================");
         }
             
@@ -83,26 +83,26 @@ namespace UserOop
             var validate = user.Exists(user => user.UserName==username);
             if (validate == true && user.Count > 0)
             {
-                Console.WriteLine("data ditemukan");
+                Console.WriteLine("data found");
                 var foundUser = user.FindAll(x => x.UserName==username);
                 foreach (User u in foundUser)
                 {
                     Console.WriteLine("=========================================");
-                    Console.Write("Edit Nama Depan ");
+                    Console.Write("Change First Name ");
                     u.FirstName = Console.ReadLine();
-                    Console.Write("Edit Nama Belakang ");
+                    Console.Write("Change Last Name ");
                     u.LastName = Console.ReadLine();
-                    Console.Write("Edit Nama Password ");
+                    Console.Write("Change Password ");
                     u.Password = Console.ReadLine();
                     u.HashedPassword = BCrypt.Net.BCrypt.HashPassword(u.Password);
                     Console.WriteLine("=========================================");
-                    Console.WriteLine("Edit profil sukses!");
+                    Console.WriteLine("Profile successfully changed!");
                     Console.ReadKey();
                 }
             }
             else
             {
-                Console.WriteLine("data tidak ditemukan");
+                Console.WriteLine("data not found");
                 Console.ReadKey();
             }
         }
@@ -125,7 +125,7 @@ namespace UserOop
             }*/
             try
             {
-                Console.Write("Silahkan Masukkan data yang ingin di hapus :");
+                Console.Write("Please enter the data you want to delete :");
                 //int hapus = Convert.ToInt32(Console.ReadLine());
                 var dlt = Console.ReadLine();
                 var validasi = user.Exists(x => x.FirstName == dlt);
@@ -138,7 +138,7 @@ namespace UserOop
                 {
                     foreach (User item in validate)
                     {
-                        Console.WriteLine("data berhasil dihapus");
+                        Console.WriteLine("Data successfully deleted");
                         user.Remove(item);
                     }
                     /*foreach (string ite in valNameFirst)
@@ -148,7 +148,7 @@ namespace UserOop
                 }
                 else
                 {
-                    Console.WriteLine("data tidak berhasil dihapus");
+                    Console.WriteLine("data was not successfully deleted");
                 }
                 
             }
