@@ -24,15 +24,16 @@ namespace UserOop
             Console.Write("Masukkan Password: ");
             this.Password = Console.ReadLine();
             this.HashedPassword = BCrypt.Net.BCrypt.HashPassword(Password);
-            var userA = a.user.Exists(x => x.FirstName == FirstName);
-            var userB = a.user.Exists(y => y.LastName == LastName);
+            var check = a.user.Exists(x => x.UserName == UserName)
+            //var userA = a.user.Exists(x => x.FirstName == FirstName);
+            //var userB = a.user.Exists(y => y.LastName == LastName);
             /*var userF = a.name.Exists(x=>x==FirstName);
             var userL = a.nameLast.Exists(x => x == LastName);
             a.name.Add(FirstName);
             a.nameLast.Add(LastName);*/
             while (loop)
             {
-                if (userA||userB)
+                if (check)
                 {
                     Random random = new Random();
                     double flt = random.NextDouble();
